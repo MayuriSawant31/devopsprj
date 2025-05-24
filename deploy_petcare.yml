@@ -1,8 +1,8 @@
-- name: Deploy PetCareApp using Docker
+- name: Deploy PetCareApp Docker container
   hosts: localhost
   tasks:
-    - name: Build Docker Image
+    - name: Build Docker image
       command: docker build -t petcareapp .
 
-    - name: Run Docker Container
-      command: docker run -d -p 8080:8080 --name petcarecontainer petcareapp
+    - name: Run Docker container
+      command: docker run -d -p 8080:80 --name petcarecontainer petcareapp

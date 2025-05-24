@@ -1,11 +1,11 @@
-# Use official Nginx image
 FROM nginx:alpine
 
-# Remove default website
-RUN rm -rf /usr/share/nginx/html/*
+WORKDIR /usr/share/nginx/html
 
-# Copy your PetCareApp into Nginx html directory
-COPY ./PetCareApp /usr/share/nginx/html
+RUN rm -rf ./*
 
-# Expose port 8080
-EXPOSE 8080
+COPY ./petcareapp /usr/share/nginx/html
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]
