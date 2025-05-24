@@ -2,7 +2,7 @@ FROM nginx:alpine
 
 WORKDIR /usr/share/nginx/html
 
-RUN rm -rf ./*
+RUN chmod -R 755 /usr/share/nginx/html
 
 COPY ./petcareapp /usr/share/nginx/html
 
